@@ -74,6 +74,19 @@ function get_child_categories($parent_category) {
     }
   }
 }
+/**
+ * Prepares and returns query for the member lists in "Der Club"
+ */
+function get_member_query($category_name) {
+    $member_category_name = get_category_by_slug($category_name);
+    $member_category_term_id = $member_category_name->term_id;
+    $args = array( 
+      'category__in' => $member_category_term_id,
+      'post_type' => array('mitglieder'),
+      'posts_per_page' => -1
+    );
+    return new WP_Query($args);
+  }
 
 /***********************/
 /*** FUNCTION BINDING **/

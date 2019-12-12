@@ -133,7 +133,8 @@ input#search {
 }
 .site-nav a:hover,
 .site-nav .sub-menu a:hover,
-.members a:hover {
+.members a:hover,
+.single-details a {
   text-decoration: none;
 }
 #menu-mobile-menu a{
@@ -302,7 +303,8 @@ input#search {
   font-family: 'Gotham-Book';
   font-size: 16px;
 }
-.members a {
+.members a,
+.single-details a {
   font-family: 'Gotham-Bold';
   font-size: 12px;
   text-transform: uppercase;
@@ -1604,6 +1606,16 @@ div.content:after {
 .last-button a {
   color: #00294C;
 }
+.single-details a::after {
+  content: url(assets/svg/arrow_right.svg);
+  vertical-align: baseline;
+  left: 14px;
+  transition: .2s;
+  position: relative;
+}
+.single-details a:hover:after {
+  left: 20px;
+}
 @media screen and (max-width: 991px) {
   .single-details.events h3,
   .single-details.project h3,
@@ -1840,7 +1852,8 @@ div.content:after {
   margin-top: 0.8em;
   margin-bottom: 0;
 }
-.members a {
+.members a,
+.single-details a {
   color: #00294C;
 }
 .members a svg{

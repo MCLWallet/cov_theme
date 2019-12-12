@@ -16,29 +16,35 @@
     </div>
     <div id="mobile-footer" class="mobile-footer">
       <div class="social-media-links">
-        <div class="icon-wrapper">                  
-          <a href="">
-            <img src="<?php bloginfo('template_url'); ?>/assets/img/facebook_icon.png" id="facebook-icon" alt="Link to Club Of Vienna Facebook Page">
-          </a>
+        <div class="icon-wrapper"> <?php
+          $facebook_link = get_field('facebook_link');
+          if ($facebook_link) { ?>
+            <a href="<?php echo $facebook_link;?>">
+              <img src="<?php bloginfo('template_url'); ?>/assets/img/facebook_icon.png" id="facebook-icon" alt="Link to Club Of Vienna Facebook Page">
+            </a> <?php
+          } ?>
         </div>
-        <div class="icon-wrapper">                  
-          <a href="">
-            <img src="<?php bloginfo('template_url'); ?>/assets/img/twitter_icon.png" id="twitter-icon" alt="Link to Club Of Vienna Twitter Page">
-          </a>
-        </div>
-        <div class="icon-wrapper">                  
-          <a href="">
-            <img src="<?php bloginfo('template_url'); ?>/assets/img/youtube_icon.png" id="youtube-icon" alt="Link to Club Of Vienna YouTube Page">
-          </a>
+        <div class="icon-wrapper"> <?php
+          $youtube_link = get_field('youtube_link');
+          if ($youtube_link) { ?>
+            <a href="<?php echo $youtube_link;?>">
+              <img src="<?php bloginfo('template_url'); ?>/assets/img/youtube_icon.png" id="youtube-icon" alt="Link to Club Of Vienna YouTube Page">
+            </a> <?php
+          } ?>
         </div>
       </div>
-      <div class="footer-address">
-        <p>
-          A-1040 Wien </br>
-          Gusshausstr. 30/230-1  </br>
-          <a href="mailto:sekretariat@clubofvienna.org">sekretariat@clubofvienna.org</a>
+      <div class="footer-address"> 
+        <p> <?php
+          $footer_address = get_field('footer_address');
+          $footer_email_address = get_field('footer_email_address');
+          if ($footer_address) {
+            echo $footer_address;
+          }
+          if ($footer_email_address) { ?>
+            </br>
+            <a href="mailto:<?php echo $footer_email_address ?>"><?php echo $footer_email_address ?></a> <?php
+          } ?>
         </p>
-        
       </div>
     </div>
     <!-- Footer -->
@@ -52,27 +58,30 @@
                 <h1> Club </br>Of</br> Vienna</h1>
               </div>
               <div class="footer-address">
-                <p><strong>Club Of Vienna</strong></br>
-                  A-1040 Wien </br>
-                  Gusshausstr. 30/230-1 
-                </p>
-                <a href="mailto:info@clubofvienna.org">sekretariat@clubofvienna.org</a>
+                <p><strong>Club Of Vienna</strong></br> <?php
+                  if ($footer_address) {
+                    echo $footer_address;
+                  } ?>
+                </p> <?php
+                if ($footer_email_address) { ?>
+                  <a href="mailto:<?php echo $footer_email_address ?>"><?php echo $footer_email_address ?></a>
+                <?php
+                } ?>
               </div>
               <div class="social-media-links">
-                <div class="icon-wrapper">                  
-                  <a href="">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/facebook_icon.png" id="facebook-icon" alt="Link to Club Of Vienna Facebook Page">
-                  </a>
+                <div class="icon-wrapper"> <?php
+                  if ($facebook_link) { ?>
+                    <a href="<?php echo $facebook_link;?>">
+                      <img src="<?php bloginfo('template_url'); ?>/assets/img/facebook_icon.png" id="facebook-icon" alt="Link to Club Of Vienna Facebook Page">
+                    </a> <?php
+                  } ?>
                 </div>
-                <div class="icon-wrapper">                  
-                  <a href="">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/twitter_icon.png" id="twitter-icon" alt="Link to Club Of Vienna Twitter Page">
-                  </a>
-                </div>
-                <div class="icon-wrapper">                  
-                  <a href="">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/youtube_icon.png" id="youtube-icon" alt="Link to Club Of Vienna YouTube Page">
-                  </a>
+                <div class="icon-wrapper"> <?php
+                  if ($youtube_link) { ?>
+                    <a href="<?php echo $youtube_link;?>">
+                      <img src="<?php bloginfo('template_url'); ?>/assets/img/youtube_icon.png" id="youtube-icon" alt="Link to Club Of Vienna YouTube Page">
+                    </a> <?php
+                  } ?>
                 </div>
               </div>
             </div>

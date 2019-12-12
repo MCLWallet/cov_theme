@@ -1,20 +1,6 @@
-<?php 
-
-  function get_member_query($category_name) {
-    $member_category_name = get_category_by_slug($category_name);
-    $member_category_term_id = $member_category_name->term_id;
-    $args = array( 
-      'category__in' => $member_category_term_id,
-      'post_type' => array('mitglieder') 
-    );
-    return new WP_Query($args);
-  }
-?>
-
 <div class="container members">
     <div id="vorstand" class="row member-list">
       <div class="col-12">
-        <!-- TODO: Category names not hardcoded -->
         <!-- TODO: Member List Refactoring -->
         <h3>Präsident und Präsidiumsmitglieder</h3>
       </div>
@@ -156,7 +142,7 @@
     </div>
     <div class="row member-list">
       <div class="col-12">
-        <h3>Ehemalige Mitglieder die das Denken und die Entwicklung des Club of Vienna entscheidend geprägt haben:</h3>
+        <h3>Ehemalige Mitglieder</h3>
       </div>
       <div class="col-12">
         <div class="row hierarchy-3">

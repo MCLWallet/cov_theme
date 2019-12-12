@@ -4,13 +4,6 @@ $project_leader_id = get_field('project_leader_id');
 $project_start = get_field('project_start');
 $project_end = get_field('project_end');
 $project_publication = get_field('publication');
-
-$publication_author = get_field('author', $project_publication);
-$publication_year = get_field('year', $project_publication);
-$publication_title = get_field('publication_title', $project_publication);
-$publication_publisher = get_field('publisher', $project_publication);
-$publication_isbn = get_field('isbn', $project_publication);
-$publication_comment = get_field('publication_comment', $project_publication);
 ?>
 
 <div class="container single">
@@ -35,10 +28,12 @@ $publication_comment = get_field('publication_comment', $project_publication);
 
       <h4>Inhalt: </h4>
       <div class="the-content"> <?php the_content(); ?></div>
-
-      <h4>Publikation: </h4>
-      <p> <?php echo $publication_author . ' (' . $publication_year . '): ' 
-          . $publication_title . '. ' . $publication_publisher . ': ' . $publication_isbn ?></p>    
+      <?php
+        if($project_publication) { ?>
+          <h4>Publikation: </h4>
+          <p> <?php echo $project_publication ?></p> <?php
+        }
+      ?>
     </div>
   </div>
   
