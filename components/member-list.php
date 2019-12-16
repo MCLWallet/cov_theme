@@ -16,7 +16,7 @@
               ?>
               <div class="member-item col-6 col-md-3">
                 <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="img-fluid">
-                <h4><?php the_title(); ?></h4>
+                <a href="<?php echo the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
                 <p><?php echo $role; ?></p>
                 <?php
                 if ($member_link) { ?>
@@ -51,7 +51,7 @@
               ?>
               <div class="member-item col-6 col-md-3">
                 <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="img-fluid">
-                <h4><?php the_title(); ?></h4>
+                <a href="<?php echo the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
                 <p><?php echo $role; ?></p>
                 <?php
                 if ($member_link) { ?>
@@ -86,7 +86,7 @@
               ?>
               <div class="member-item col-6 col-md-3 col-lg-2">
                 <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="img-fluid">
-                <h4><?php the_title(); ?></h4>
+                <a href="<?php echo the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
                 <p><?php echo $role; ?></p>
                 <?php
                 if ($member_link) { ?>
@@ -121,7 +121,7 @@
                   $member_link = get_field('member_link');
                   ?>
                   <div class="member">
-                    <p><?php the_title(); ?></p>
+                    <a href="<?php echo the_permalink(); ?>"><p><?php the_title(); ?></p></a>
                     <?php
                     if ($member_link) { ?>
                       <a href="<?php echo $member_link['url']; ?>">
@@ -156,7 +156,7 @@
                   $member_link = get_field('member_link');
                   ?>
                   <div class="member">
-                    <p><?php the_title(); ?></p>
+                    <a href="<?php echo the_permalink(); ?>"><p><?php the_title(); ?></p></a>
                     <?php
                     if ($member_link) { ?>
                       <a href="<?php echo $member_link['url']; ?>">

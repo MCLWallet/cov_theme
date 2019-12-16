@@ -20,6 +20,9 @@ if ( have_posts() ) {
       case 'presse':
         get_template_part('posts/press-post');
         break;
+      case 'mitglieder':
+        get_template_part('posts/member-post');
+        break;
       default:
         get_template_part('posts/default-post');
         break;

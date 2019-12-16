@@ -5,7 +5,11 @@
   if (!$is_search) {
     // check if current page is a single post or a page
     $is_single = get_post_type();
-    if (get_post_type() == 'veranstaltungen' || get_post_type() == 'projekte' || get_post_type() == 'publikationen' || get_post_type() == 'presse') { 
+    if (get_post_type() == 'veranstaltungen' 
+        || get_post_type() == 'projekte' 
+        || get_post_type() == 'publikationen' 
+        || get_post_type() == 'presse'
+        || get_post_type() == 'mitglieder') { 
       $is_single = true;
     }
     else {
@@ -43,11 +47,21 @@
           <?php
         }
         else {
-          if ($is_single) { ?>
-            <a href="<?php echo bloginfo('url') . '/' . get_post_type(); ?>"><?php echo get_post_type(); ?></a> 
-            >
-            <a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a>
-            <?php
+          if ($is_single) { 
+            if (get_post_type() == 'mitglieder') {
+              ?>
+              <a href="<?php echo bloginfo('url') . '/der-club'; ?>">Der Club</a> 
+              >
+              <a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a>
+              <?php
+            }
+            else {
+              ?>
+              <a href="<?php echo bloginfo('url') . '/' . get_post_type(); ?>"><?php echo get_post_type(); ?></a> 
+              >
+              <a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a>
+              <?php
+            }
           }
           else { ?>
             <a href="<?php echo bloginfo('url') . '/' . get_post_type(); ?>"><?php echo $post_slug; ?></a>
@@ -64,15 +78,21 @@
           <h2>Suche</h2> <?php
         }
         else {
-          if ($is_single) { ?>
-            <h2><?php echo get_post_type(); ?> </h2> <?php
+          if ($is_single) { 
+            if (get_post_type() == 'mitglieder') { ?>
+              <h2>Der Club</h2>
+            <?php
+            }
+            else {
+              ?>
+              <h2><?php echo get_post_type(); ?> </h2> <?php  
+            }
           }
           else { ?>
             <h2><?php echo the_title(); ?> </h2> <?php
           }
         }
         ?>
-        
       </div>
       <?php
       if (!$is_search) { ?>
