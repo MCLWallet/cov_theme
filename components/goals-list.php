@@ -76,16 +76,5 @@
       }
       ?>
     </div>
-    <div class="col-12 sub-heading">
-      <h3>Die Ziele des Club of Vienna</h3>
-    </div>
-    <div class="col-12">
-      <?php
-      if ($goal_text) {
-        echo $goal_text;
-      } 
-      ?>
-    </div>
-
   </div>
 </div>

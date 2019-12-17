@@ -9,6 +9,7 @@ $role = get_field('role');
         <?php get_template_part('assets/svg/arrow_left'); ?>
         Zurück zur Übersicht
       </a>
+      <img src="<?php echo get_the_post_thumbnail_url();?>" alt="" class="img-fluid book-cover">
     </div>
     <div class="single-details press col-12 col-lg-9">
       <h3><?php echo the_title(); ?></h3>
