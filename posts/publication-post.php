@@ -20,11 +20,6 @@ $publication_comment = get_field('publication_comment');
     <div class="single-details publication col-12 col-lg-9">
       <h3><?php echo the_title(); ?></h3>
       <h4><?php echo $author . ', ' . $year; ?></h4>
-
-      <div class="hard-facts">
-        <p><?php echo $author . ' (' . $year . ') ' . $publication_title . '. ' . $publisher . '. ISBN: ' . $isbn; ?></p>
-        <p><?php echo $publication_comment; ?></p>
-      </div>
       
       <?php the_content(); ?>
 

@@ -22,13 +22,16 @@ $new_date_format = date_i18n('l, j. F Y', $date_format_translate);
     </div>
     <div class="single-details events col-12 col-lg-9">
       <h3><?php echo the_title(); ?></h3>
-      <p>Der Club Of Vienna möchte Sie herzlich einladen zu</p>
-
-      <h4><?php echo the_title(); ?></h4>
       <h4><?php echo $speaker; ?></h4>
 
-      <div class="hard-facts">
-        <p><?php echo $new_date_format . ', Beginn ' . $event_time; ?></p>
+      <div class="hard-facts"> <?php
+        if ($event_time) { ?>
+          <p><?php echo $new_date_format . ', Beginn ' . $event_time; ?></p> <?php
+        }
+        else { ?>
+          <p><?php echo $new_date_format ?></p> <?php
+        }
+        ?>
         <p><?php echo $event_location; ?></p>
       </div>
       
