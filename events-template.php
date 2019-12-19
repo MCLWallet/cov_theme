@@ -82,9 +82,12 @@ get_header();
                   <h3><?php echo the_title(); ?></h3>
                   <h4><?php echo $speaker; ?></h4>
 
-                  <p><?php echo $event_location; ?></p>
-                  <p><?php echo 'Beginn: ' . $event_time; ?></p>
-                  
+                  <p><?php echo $event_location; ?></p> <?php
+                  if ($event_time) { ?>
+                    <p><?php echo 'Beginn: ' . $event_time . ' Uhr'; ?></p>
+                  <?php
+                  }
+                  ?>
                 </div>
 
                 <?php get_template_part('components/item-themes'); ?>
