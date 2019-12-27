@@ -13,9 +13,15 @@ get_header();
       <div class="list press col-12">
         <div class="row">
           <?php
+          $count = get_option('posts_per_page', 10);
+          $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+          $offset = ($paged - 1) * $count;
           // prepare WP Query to render all press posts 
           $args = array( 
-            'post_type' => array('presse'),
+            'post_type' => 'presse',
+            'posts_per_page' => $count,
+            'paged' => $paged,
+            'offset' => $offset,
             'meta_key' => 'press_date',
             'orderby' => 'meta_value_num',
             'order' => 'DESC'          
@@ -40,7 +46,13 @@ get_header();
                 </span>
               </a> <?php
             endwhile;
+            previous_posts_link('Zurück', $press_post_query->max_num_pages);
+            next_posts_link('Weiter', $press_post_query->max_num_pages);
           }
+          else {
+            // No posts found
+          }
+          wp_reset_postdata();
           ?>
         </div>
       </div>

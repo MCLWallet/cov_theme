@@ -243,6 +243,9 @@ input#search {
   font-size: 11px;
   color: #fff;
 }
+.footer-address p {
+  margin-bottom: 0;
+}
 .footer-address p strong {
   font-family: 'Gotham-Bold';
   text-transform: uppercase;
@@ -255,6 +258,16 @@ input#search {
   text-transform: uppercase;
   color: #fff;
 }
+.footer .newsletter-register label[for="AGREE_TO_TERMS"],
+.newsletter-register input[type="submit"] {
+  font-family: 'Gotham-Book';
+  font-size: 11px;
+  text-transform: none;
+}
+.footer .newsletter-register input[type="checkbox"] {
+  margin-right: 10px;
+}
+.footer .newsletter-register
 .footer .sitemap .sub-menu li a {
   font-family: 'Gotham-Book';
   text-transform: capitalize;
@@ -786,7 +799,8 @@ input#search {
   width: 0%;
   left: 50%;
 }
-.button {
+.button,
+.newsletter-register input[type="submit"] {
   display: inline-block;
   border: 1px solid;
   color: rgba(255, 255, 255, 1);
@@ -826,6 +840,15 @@ input#search {
   background: rgba(0, 41, 76, 1);
   border-color: rgba(0, 41, 76, 1);
   color: rgba(255, 255, 255, 1);
+}
+.newsletter-register input[type="submit"] {
+  background: rgba(0, 41, 76, 1);
+  border-color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
+}
+.newsletter-register input[type="submit"]:hover {
+  background: rgba(255, 255, 255, 1);
+  color: rgba(0, 41, 76, 1);
 }
 @media screen and (max-width: 991px) {
   .navbar-toggler-wrapper {
@@ -990,41 +1013,20 @@ img.stadt-wien-logo {
 .footer input[type="email"]::-ms-input-placeholder {
   color: #fff;
 }
-#newsletter-registration-footer {
-  display: grid;
-  grid-template-rows: auto auto auto auto auto;
-  grid-template-columns: 50% 50%;
-  row-gap: 20px;
+.newsletter-register label[for="FNAME"],
+.newsletter-register label[for="LNAME"],
+.newsletter-register label[for="EMAIL"] {
+  display: none;
 }
-#newsletter-registration-footer #first-name {
-  grid-column: 1 / 2;
-  grid-row: 1 / 1;
-  margin-right: 10px;
+.footer input[name="FNAME"] {
+  width: 45%;
+  margin-right: 4%;
 }
-#newsletter-registration-footer #last-name {
-  grid-column: 2 / 3;
-  grid-row: 1 / 1;
-  margin-left: 10px;
+.footer input[name="LNAME"] {
+  width: 49%;
 }
-#newsletter-registration-footer #email {
-  grid-column: 1 / 3;
-  grid-row: 2 / 2;
-}
-#newsletter-registration-footer #terms {
-  grid-column: 1 / 1;
-  grid-row: 3 / 3;
-}
-#newsletter-registration-footer .terms {
-  grid-column: 1 / 3;
-  grid-row: 3 / 3;
-  padding-left: 25px;
-}
-#newsletter-registration-footer button[type="submit"] {
-  grid-column: 1 / 2;
-  grid-row: 4 / 4;
-  border: 1px solid #fff;
-  background: none;
-  line-height: 2.5em;
+.footer input[name="EMAIL"] {
+  width: 99%;
 }
 
 @media screen and (max-width: 991px) {
