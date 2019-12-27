@@ -278,6 +278,10 @@ input#search {
 .footer .sitemap ul li a:hover {
   text-decoration: none;
 }
+.footer .sitemap ul li ul.sub-menu li a{
+  font-family: 'Gotham-Book';
+  text-transform: none;
+}
 .date .day {
   font-family: 'Gotham-Book';
   font-size: 41px;
