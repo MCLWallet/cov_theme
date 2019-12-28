@@ -8,16 +8,16 @@ if ( have_posts() ) {
 
     $post_type = get_post_type();
     switch($post_type) {
-      case 'veranstaltungen':
+      case 'event':
         get_template_part('posts/event-post');
         break;
-      case 'projekte':
+      case 'project':
         get_template_part('posts/project-post');
         break;
-      case 'publikationen':
+      case 'publication':
         get_template_part('posts/publication-post');
         break;
-      case 'presse':
+      case 'press':
         get_template_part('posts/press-post');
         break;
       case 'mitglieder':

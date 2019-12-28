@@ -13,9 +13,20 @@ get_header();
       <!-- TODO: Implement Search Filter (Projects) -->
       <div class="list project col-12">
         <?php
+          // prepare pagination query
+          $count = get_option('posts_per_page', 10);
+          $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+          $offset = ($paged - 1) * $count;
+
           // prepare WP Query to render all project posts 
-          $args = array( 'post_type' => array('projekte') );
+          $args = array( 
+            'post_type' => array('project'),
+            'posts_per_page' => $count,
+            'paged' => $paged,
+            'offset' => $offset
+          );
           $project_post_query = new WP_Query($args);
+
           if ($project_post_query->have_posts()) {
             while($project_post_query->have_posts()): $project_post_query->the_post();
               $project_leader_id = get_field('project_leader_id');
@@ -37,6 +48,13 @@ get_header();
             endwhile;
           }
         ?>
+      </div>
+      <div class="col-12 pagination-links">
+        <?php
+          echo paginate_links(array(
+            'total' => $project_post_query->max_num_pages
+          ));
+          wp_reset_postdata(); ?>
       </div>
     </div>
   </div>

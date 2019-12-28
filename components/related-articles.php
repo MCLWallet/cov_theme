@@ -8,7 +8,7 @@ if ($categories) {
   $args = array(
     'category__in' => $category_terms,
     'post__not_in' => array($post->ID),
-    'post_type' => array('projekte', 'veranstaltungen', 'publikationen', 'presse'),
+    'post_type' => array('project', 'event', 'publication', 'press'),
     'posts_per_page' => 3,
     'caller_get_posts' => 1
   );

@@ -48,7 +48,7 @@ $new_date_format = date_i18n('l, j. F Y', $date_format_translate);
     <?php
     $args = array(
       'post__not_in' => array($post->ID),
-      'post_type' => array('veranstaltungen'),
+      'post_type' => array('event'),
       'posts_per_page' => 3,
       'caller_get_posts' => 1,
       'meta_key' => 'event_date',

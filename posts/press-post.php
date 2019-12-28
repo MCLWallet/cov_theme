@@ -31,7 +31,7 @@ $press_date = get_field('press_date');
     );
     $args = array(
       'post__not_in' => array($post->ID),
-      'post_type' => array('presse'),
+      'post_type' => array('press'),
       'meta_key' => 'press_date',
       'orderby' => 'meta_value_num',
       'order' => 'DESC',
@@ -53,7 +53,7 @@ $press_date = get_field('press_date');
           
           <p><?php echo get_the_excerpt(); ?> </p>
           <span href="#">
-            <?php echo get_go_to_label('presse'); ?>
+            <?php echo get_go_to_label('press'); ?>
             <?php get_template_part('assets/svg/arrow_right');?>
           </span>
         </a>

@@ -10,7 +10,7 @@ get_template_part('components/sub-header');
       $event_heading_rendered = false; 
       $publication_heading_rendered = false; 
       $project_heading_rendered = false;
-      $presse_heading_rendered = false;
+      $press_heading_rendered = false;
       $other_heading_rendered = false;
 
       if ( have_posts() ) { 
@@ -28,7 +28,7 @@ get_template_part('components/sub-header');
         <?php
         while ( have_posts() ): the_post();
 
-        if (get_post_type() == 'veranstaltungen') { 
+        if (get_post_type() == 'event') { 
           if (!$event_heading_rendered) { ?>
             <div class="col-12 result-heading">
               <h3>Veranstaltungen</h3>
@@ -57,7 +57,7 @@ get_template_part('components/sub-header');
           </a>
           <?php
         }
-        elseif (get_post_type() == 'publikationen') { 
+        elseif (get_post_type() == 'publication') { 
           if (!$publication_heading_rendered) { ?>
           <div class="col-12 result-heading">
             <h3>Publikationen</h3>
@@ -76,7 +76,7 @@ get_template_part('components/sub-header');
             </div>
           <?php
         }
-        elseif (get_post_type() == 'projekte') { 
+        elseif (get_post_type() == 'project') { 
           if (!$project_heading_rendered) { ?>
             <div class="col-12 result-heading">
               <h3>Projekte</h3>
@@ -93,12 +93,12 @@ get_template_part('components/sub-header');
           </a>
           <?php
         }
-        elseif (get_post_type() == 'presse') { 
-          if (!$presse_heading_rendered) { ?>
+        elseif (get_post_type() == 'press') { 
+          if (!$press_heading_rendered) { ?>
             <div class="col-12 result-heading">
               <h3>Presse</h3>
             </div> <?php
-            $presse_heading_rendered = true;
+            $press_heading_rendered = true;
           }
           $press_date = get_field('press_date');
           ?>
@@ -110,7 +110,7 @@ get_template_part('components/sub-header');
             
             <p><?php echo get_the_excerpt(); ?> </p>
             <span href="#">
-              <?php echo get_go_to_label('presse'); ?>
+              <?php echo get_go_to_label('press'); ?>
               <?php get_template_part('assets/svg/arrow_right');?>
             </span>
           </a>

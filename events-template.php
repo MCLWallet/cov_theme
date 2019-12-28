@@ -36,23 +36,34 @@ get_header();
             default:
               break;
           }
+          // prepare pagination query
+          $count = get_option('posts_per_page', 10);
+          // $count = 3;
+          $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+          $offset = ($paged - 1) * $count;
           // Show only past or current events
           if ($events_shown != 'all') {
             $args = array( 
-              'post_type' => array('veranstaltungen'),
+              'post_type' => array('event'),
               'meta_key' => 'event_date',
               'orderby' => 'meta_value_num',
               'order' => 'DESC',
-              'meta_query' => array($meta_query)
+              'meta_query' => array($meta_query),
+              'posts_per_page' => $count,
+              'paged' => $paged,
+              'offset' => $offset
             );
           }
           // Show all events
           else {
             $args = array( 
-              'post_type' => array('veranstaltungen'),
+              'post_type' => array('event'),
               'meta_key' => 'event_date',
               'orderby' => 'meta_value_num',
-              'order' => 'DESC'
+              'order' => 'DESC',
+              'posts_per_page' => $count,
+              'paged' => $paged,
+              'offset' => $offset
             );
           }
           
@@ -96,6 +107,13 @@ get_header();
             endwhile;
           }
         ?>
+      </div>
+      <div class="col-12 pagination-links">
+        <?php
+          echo paginate_links(array(
+            'total' => $event_post_query->max_num_pages
+          ));
+          wp_reset_postdata(); ?>
       </div>
     </div>
   </div>

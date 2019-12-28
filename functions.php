@@ -37,13 +37,13 @@ function post_thumbnail_setup() {
  */
 function get_go_to_label($term) {
   switch($term) {
-    case 'veranstaltungen':
+    case 'event':
       return 'Zur Veranstaltung';
-    case 'projekte':
+    case 'project':
       return 'Zum Projekt';
-    case 'publikationen':
+    case 'publication':
       return 'Zur Publikation';
-    case 'presse':
+    case 'press':
       return 'Zum Artikel';
     default:
       return 'Zum Post';
@@ -52,7 +52,7 @@ function get_go_to_label($term) {
 
 function sort_search_query($query) {
   if ($query->is_search()) {
-    $query->set('post_type', array('page', 'veranstaltungen', 'projekte', 'publikationen', 'presse', 'mitglieder'));
+    $query->set('post_type', array('page', 'event', 'project', 'publication', 'press', 'mitglieder'));
     $query->set('orderby', 'post_type');
     $query->set('order', 'DESC');
   }

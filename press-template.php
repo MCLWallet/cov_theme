@@ -13,12 +13,12 @@ get_header();
       <div class="list press col-12">
         <div class="row">
           <?php
-          $count = get_option('posts_per_page', 10);
+          $count = 9;
           $paged = get_query_var('paged') ? get_query_var('paged') : 1;
           $offset = ($paged - 1) * $count;
           // prepare WP Query to render all press posts 
           $args = array( 
-            'post_type' => 'presse',
+            'post_type' => 'press',
             'posts_per_page' => $count,
             'paged' => $paged,
             'offset' => $offset,
@@ -41,19 +41,25 @@ get_header();
                 
                 <p><?php echo get_the_excerpt(); ?> </p>
                 <span>
-                  <?php echo get_go_to_label('presse'); ?>
+                  <?php echo get_go_to_label('press'); ?>
                   <?php get_template_part('assets/svg/arrow_right'); ?>
                 </span>
               </a> <?php
             endwhile;
-            previous_posts_link('Zurück', $press_post_query->max_num_pages);
-            next_posts_link('Weiter', $press_post_query->max_num_pages);
+            
           }
           else {
             // No posts found
-          }
-          wp_reset_postdata();
-          ?>
+          } ?>
+        </div>
+        <div class="row"> 
+          <div class="col-12 pagination-links">
+            <?php
+              echo paginate_links(array(
+                'total' => $press_post_query->max_num_pages
+              ));
+              wp_reset_postdata(); ?>
+          </div>
         </div>
       </div>
     </div>

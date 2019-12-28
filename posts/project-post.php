@@ -51,7 +51,7 @@ $project_publication = get_field('publication');
       $args = array(
         'category__in' => $category_terms,
         'post__not_in' => array($post->ID),
-        'post_type' => array('projekte'),
+        'post_type' => array('project'),
         'posts_per_page' => 3,
         'caller_get_posts' => 1
       );

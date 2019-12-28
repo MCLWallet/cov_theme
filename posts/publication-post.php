@@ -32,7 +32,7 @@ $publication_comment = get_field('publication_comment');
     <?php
     $args = array(
       'post__not_in' => array($post->ID),
-      'post_type' => array('publikationen'),
+      'post_type' => array('publication'),
       'posts_per_page' => 2,
       'caller_get_posts' => 1,
       'meta_key' => 'year',

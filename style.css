@@ -333,6 +333,17 @@ input#search {
   font-family: 'Gotham-Light';
   font-size: 120px;
 }
+.pagination-links {
+  font-family: 'Gotham-Book';
+  font-size: 18px;
+}
+.pagination-links a,
+.pagination-links span {
+  color: #00294C;
+}
+.pagination-links .page-numbers.current {
+  font-family: 'Gotham-Bold';
+}
 
 @media screen and (max-width: 991px) {
   h1 {
@@ -1107,8 +1118,18 @@ img.stadt-wien-logo {
 /*--------------------------------------
 2.5 Other UI elements
 ---------------------------------------*/
-.date {
+.date,
+.pagination-links {
   text-align: center;
+}
+.pagination-links {
+  margin: 2.2em 0 2.2em;
+}
+.pagination-links .prev {
+  margin-right: 15px;
+}
+.pagination-links .next {
+  margin-left: 15px;
 }
 /*--------------------------------------------------------------
 3. Layout

@@ -5,10 +5,10 @@
   if (!$is_search) {
     // check if current page is a single post or a page
     $is_single = get_post_type();
-    if (get_post_type() == 'veranstaltungen' 
-        || get_post_type() == 'projekte' 
-        || get_post_type() == 'publikationen' 
-        || get_post_type() == 'presse'
+    if (get_post_type() == 'event' 
+        || get_post_type() == 'project' 
+        || get_post_type() == 'publication' 
+        || get_post_type() == 'press'
         || get_post_type() == 'mitglieder') { 
       $is_single = true;
     }
@@ -19,13 +19,13 @@
     
     global $post;
     $post_slug = $post->post_name;
-    if (get_post_type() == 'veranstaltungen' || (strpos($post_slug, 'veranstaltungen') || $post_slug == 'veranstaltungen')) {
+    if (get_post_type() == 'event' || (strpos($post_slug, 'veranstaltungen') || $post_slug == 'veranstaltungen')) {
       $sub_header_class = 'events';
     }
-    else if (get_post_type() == 'publikationen' || $post_slug == 'publikationen') {
+    else if (get_post_type() == 'publication' || $post_slug == 'publikationen') {
       $sub_header_class = 'publications';
     }
-    else if (get_post_type() == 'projekte' || $post_slug == 'projekte') {
+    else if (get_post_type() == 'project' || $post_slug == 'projekte') {
       $sub_header_class = 'projects';
     }
     else if ($post_slug == 'wiener-rupert-riedl-preis') {
@@ -97,7 +97,7 @@
       <?php
       if (!$is_search) { ?>
         <div class="sub-menu col-12"> <?php
-        if (get_post_type() == 'veranstaltungen' || (strpos($post_slug, 'veranstaltungen') || $post_slug == 'veranstaltungen'))  {  ?>
+        if (get_post_type() == 'event' || (strpos($post_slug, 'veranstaltungen') || $post_slug == 'veranstaltungen'))  {  ?>
           <ul>
             <li>
               <a href="<?php echo bloginfo('url'); ?>/aktuelle-veranstaltungen">Aktuelle Veranstaltungen</a>

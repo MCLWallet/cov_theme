@@ -13,8 +13,18 @@ get_header();
       <div class="list publication col-12">
         <div class="row">
           <?php
+            // prepare pagination query
+            $count = get_option('posts_per_page', 10);
+            $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+            $offset = ($paged - 1) * $count;
+
             // prepare WP Query to render all publication posts 
-            $args = array( 'post_type' => array('publikationen') );
+            $args = array( 
+              'post_type' => array('publication'),
+              'posts_per_page' => $count,
+              'paged' => $paged,
+              'offset' => $offset
+            );
             $publication_post_query = new WP_Query($args);
 
             // Loop through each publication post
@@ -37,6 +47,15 @@ get_header();
             endwhile;
             }
           ?>
+        </div>
+        <div class="row"> 
+          <div class="col-12 pagination-links">
+            <?php
+              echo paginate_links(array(
+                'total' => $publication_post_query->max_num_pages
+              ));
+              wp_reset_postdata(); ?>
+          </div>
         </div>
       </div>
     </div>
