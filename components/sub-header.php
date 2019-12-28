@@ -72,7 +72,7 @@
               else { ?>
                 <a href="<?php echo bloginfo('url') . '/wiener-rupert-riedl-preis'; ?>">Wiener Rupert-Riedl-Preis</a>
                 >
-                <a href="<?php get_permalink($post); ?>"><?php echo $post_slug; ?></a> <?php
+                <a href="<?php get_permalink($post); ?>"><?php echo get_the_title($post); ?></a> <?php
               }
             }
             else { ?>
