@@ -15,8 +15,8 @@
     else {
       $is_single = false;
     }
+
     // check post type or page name for correct sub header color
-    
     global $post;
     $post_slug = $post->post_name;
     $post_parent = get_the_title($post->post_parent);
@@ -38,6 +38,8 @@
 <div class="sub-header <?php echo $sub_header_class; ?>">
   <div class="container">
     <div class="row">
+
+      <!-- Breadcrumbs -->
       <div class="breadcrumbs col-12">
         <a href="<?php bloginfo('url'); ?>">Home</a>
         >
@@ -52,6 +54,34 @@
             if (get_post_type() == 'mitglieder') {
               ?>
               <a href="<?php echo bloginfo('url') . '/der-club'; ?>">Der Club</a> 
+              >
+              <a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a>
+              <?php
+            }
+            else if (get_post_type() == 'press') {
+              ?>
+              <a href="<?php echo bloginfo('url') . '/presse' ?>">Presse</a> 
+              >
+              <a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a>
+              <?php
+            }
+            else if (get_post_type() == 'publication') {
+              ?>
+              <a href="<?php echo bloginfo('url') . '/publikationen' ?>">Publikationen</a> 
+              >
+              <a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a>
+              <?php
+            }
+            else if (get_post_type() == 'project') {
+              ?>
+              <a href="<?php echo bloginfo('url') . '/projekte' ?>">Projekte</a> 
+              >
+              <a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a>
+              <?php
+            }
+            else if (get_post_type() == 'event') {
+              ?>
+              <a href="<?php echo bloginfo('url') . '/veranstaltungen' ?>">Veranstaltungen</a> 
               >
               <a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a>
               <?php
@@ -81,6 +111,7 @@
           }
         } ?>
       </div>
+      <!-- Page Title -->
       <div class="page-title col-12">
         <?php
         if ($is_search) { ?>
@@ -91,6 +122,22 @@
             if (get_post_type() == 'mitglieder') { ?>
               <h2>Der Club</h2>
             <?php
+            }
+            else if (get_post_type() == 'press') { ?>
+              <h2>Presse</h2>
+              <?php
+            }
+            else if (get_post_type() == 'publication') { ?>
+              <h2>Publikationen</h2>
+              <?php
+            }
+            else if (get_post_type() == 'project') { ?>
+              <h2>Projekte</h2>
+              <?php
+            }
+            else if (get_post_type() == 'event') { ?>
+              <h2>Veranstaltungen</h2>
+              <?php
             }
             else {
               ?>
@@ -108,6 +155,8 @@
         }
         ?>
       </div>
+
+      <!-- Sub Menu -->
       <?php
       if (!$is_search) { ?>
         <div class="sub-menu col-12"> <?php
