@@ -16,14 +16,14 @@ get_template_part('components/sub-header');
       if ( have_posts() ) { 
         $num_posts = $wp_query->found_posts;
         if ($num_posts > 1) {
-          $search_result_words = array('Es wurden ', ' Suchergebnisse ');
+          $search_result_words = array('Es wurden folgende Suchergebnisse ');
         }
         elseif ($num_posts == 1) {
-          $search_result_words = array('Es wurde ', ' Suchergebnis ');
+          $search_result_words = array('Es wurde ein Suchergebnis ');
         }
         ?>
         <div class="col-12 message">
-          <p><?php echo $search_result_words[0] . $num_posts . $search_result_words[1]; ?>  zu <strong><?php echo get_search_query(true); ?></strong> gefunden</strong>
+          <p><?php echo $search_result_words[0]; ?>  zu <strong><?php echo get_search_query(true); ?></strong> gefunden</strong>
         </div>
         <?php
         while ( have_posts() ): the_post();

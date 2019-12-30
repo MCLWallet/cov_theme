@@ -35,17 +35,15 @@
         } ?>
       </div>
       <div class="footer-address"> 
-        <p> <?php
+        <?php
           $footer_address = do_shortcode('[pods name="footer" slug="footer_address" field="footer_address"]');
           $footer_email_address = do_shortcode('[pods name="footer" slug="footer_email_address" field="footer_email_address"]');
           if ($footer_address) {
             echo $footer_address;
           }
           if ($footer_email_address) { ?>
-            </br>
             <a href="mailto:<?php echo $footer_email_address ?>"><?php echo $footer_email_address ?></a> <?php
           } ?>
-        </p>
       </div>
     </div>
     <!-- Footer -->
