@@ -19,8 +19,8 @@ get_header();
         <div class="container">
           <div class="row">
             <div class="col-12 col-lg-11 col-xl-9"> <?php
-              $wrrp_intro_text = do_shortcode('[pods name="wiener_rupert-riedl-preis" slug="intro_text" field="intro_text"]'); ?>
-              <?php echo $wrrp_intro_text; ?>
+              $wrrp_intro_text = get_field('wrrp_intro_text'); ?>
+              <p><?php echo $wrrp_intro_text; ?></p>
             </div>
           </div>
         </div>
