@@ -1565,7 +1565,7 @@ div.content:after {
 }
 
 /*--------------------------------------
-3.3 Single Post
+3.3 ^
 ---------------------------------------*/
 .single-details {
   color: #00294C;
@@ -1642,6 +1642,9 @@ div.content:after {
 }
 .single-details a:hover:after {
   left: 20px;
+}
+.single-details.project a.publication-link {
+  margin-left: 10px;
 }
 @media screen and (max-width: 991px) {
   .single-details.events h3,

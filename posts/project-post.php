@@ -31,7 +31,10 @@ $project_publication = get_field('publication');
       <?php
         if($project_publication) { ?>
           <h4>Publikation: </h4>
-          <p> <?php echo $project_publication ?></p> <?php
+          <p> <?php echo get_the_title($project_publication) . ': ' . get_field('author', $project_publication); ?>
+            <a class="publication-link" href="<?php the_permalink($project_publication);?>">Zur Publikation</a>
+          </p> 
+          <?php
         }
       ?>
     </div>
