@@ -2,7 +2,7 @@
     <div id="vorstand" class="row member-list">
       <div class="col-12">
         <!-- TODO: Member List Refactoring -->
-        <h3>Präsident und Präsidiumsmitglieder</h3>
+        <h3>Vorstand</h3>
       </div>
       <div class="col-12">
         <div class="row hierarchy-1">
