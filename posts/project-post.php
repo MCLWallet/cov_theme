@@ -15,11 +15,13 @@ $project_publication = get_field('publication');
       </a>
     </div>
     <div class="single-details project col-12 col-lg-9">
-      <h3><?php echo the_title(); ?></h3>
+      <h3><?php echo the_title(); ?></h3> <?php 
 
-      <h4>Titel: </h4>
-      <p> <?php echo $project_title; ?></p>
-
+        if ($project_title) { ?>
+          <h4>Titel: </h4>
+            <p> <?php echo $project_title; ?></p>    <?php
+        } ?>
+      
       <h4>Projektleitung: </h4>
       <p> <?php echo get_the_title($project_leader_id[0]); ?></p>
 
