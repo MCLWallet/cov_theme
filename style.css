@@ -1625,6 +1625,9 @@ div.content:after {
 .single .heading-wrapper h3{
   margin-bottom: 30px;
 }
+.single h5 {
+  font-size: 13px;
+}
 .last-button {
   text-align: center;
   padding-top: 60px;
