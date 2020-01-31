@@ -23,7 +23,7 @@ $project_publication = get_field('publication');
         } ?>
       
       <h4>Projektleitung: </h4>
-      <p> <?php echo get_the_title($project_leader_id[0]); ?></p>
+      <p> <?php echo get_the_title($project_leader_id); ?></p>
 
       <h4>Projektzeitraum: </h4>
       <p><?php echo $project_start . ' - ' . $project_end; ?></p>
