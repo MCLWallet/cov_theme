@@ -24,6 +24,7 @@ get_header();
                 'value' => $date_now,
                 'type' => 'DATETIME'
               );
+              $order = 'DESC';
               break;
             case 'current':
               $meta_query = array(
@@ -32,6 +33,7 @@ get_header();
                 'value' => $date_now,
                 'type' => 'DATETIME'
               );
+              $order = 'ASC';
               break;
             default:
               break;
@@ -47,7 +49,7 @@ get_header();
               'post_type' => array('event'),
               'meta_key' => 'event_date',
               'orderby' => 'meta_value_num',
-              'order' => 'DESC',
+              'order' => $order,
               'meta_query' => array($meta_query),
               'posts_per_page' => $count,
               'paged' => $paged,
